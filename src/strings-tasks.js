@@ -4,7 +4,8 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
  *                                                                                           *
  ******************************************************************************************* */
-
+//Итак, я решала все задачи со школьконого, а не форкнутого репозитория, поэтому, дабы не 
+//дурить мозги, скопировала себе свои решения. Надо бы удалить эту злосчастную папку.
 /**
  * Returns the length of the given string.
  *
@@ -19,8 +20,14 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  let a = value;
+  if (a === null || a === undefined) {
+    a = 0;
+  } else if (String(a)) {
+    a = a.length;
+  }
+  return a;
 }
 
 /**
@@ -53,10 +60,11 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  const a = value1;
+  const b = value2;
+  return a.concat(b);
 }
-
 /**
  * Returns the first character of the given string.
  *
@@ -68,10 +76,10 @@ function concatenateStrings(/* value1, value2 */) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  const a = value;
+  return a.charAt(0);
 }
-
 /**
  * Removes leading and trailing whitespace characters from the string.
  *
@@ -83,8 +91,9 @@ function getFirstChar(/* value */) {
  *   removeLeadingAndTrailingWhitespaces('cat ') => 'cat'
  *   removeLeadingAndTrailingWhitespaces('\t\t\tHello, World! ') => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  const a = value;
+  return a.trim();
 }
 
 /**
@@ -98,8 +107,9 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   removeLeadingWhitespaces('cat ') => 'cat '
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
-function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingWhitespaces(value) {
+  const a = value;
+  return a.trimStart();
 }
 
 /**
@@ -113,8 +123,9 @@ function removeLeadingWhitespaces(/* value */) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  const a = value;
+  return a.trimEnd();
 }
 
 /**
@@ -130,8 +141,13 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(/* str, times */) {
-  throw new Error('Not implemented');
+function repeatString(str, times) {
+  const a = str;
+  let b = times;
+  if (b < 0) {
+    b = 0;
+  }
+  return a.repeat(b);
 }
 
 /**
