@@ -281,8 +281,9 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  const a = str;
+  return a.split('').sort().join('');
 }
 
 /**
@@ -404,8 +405,10 @@ function invertCase(/* str */) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  const a = firstName;
+  const b = lastName;
+  return `Hello, ${a} ${b}!`;
 }
 
 /**
@@ -435,7 +438,7 @@ function extractNameFromTemplate(/* value */) {
  */
 function unbracketTag(str) {
   const a = str;
-  return a.replace(/<>/g, '');
+  return a.replace(/[^a-zа-яё]/gi, '');
 }
 
 /**
@@ -453,8 +456,9 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  const a = str;
+  return a.split(';');
 }
 
 /**
