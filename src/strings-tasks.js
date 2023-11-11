@@ -197,16 +197,8 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(str) {
-  let summ = 0;
-  for (let i = 0; i < str.length; ) {
-    const a = str[i];
-    summ += a.charCodeAt();
-  }
-  if (str === null) {
-    summ = 0;
-  }
-  return summ;
+function sumOfCodes() {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -326,8 +318,16 @@ function containsSubstring(str, substring) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const a = str;
+  const b = a.match(/[aeiouyAEIOUY]/gi);
+  let c;
+  if (b === null || b === '' || b === undefined) {
+    c = 0;
+  } else {
+    c = b.length;
+  }
+  return c;
 }
 
 /**
@@ -367,8 +367,12 @@ function isPalindrome(str) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const c = sentence.split(' ');
+  const b = c.sort(function lolo(a, e) {
+    return e.length - a.length;
+  });
+  return b[0];
 }
 
 /**
@@ -381,8 +385,13 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const a = str.split(' ');
+  const b = [];
+  for (let i = 0; i < a.length; ) {
+    b.push(a[i].split('').reverse().join(''));
+  }
+  return b.join(' ');
 }
 
 /**
