@@ -197,8 +197,17 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes() {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  const b = String(str);
+  let summ = 0;
+  for (let i = 0; i < b.length; i += 1) {
+    const a = b[i];
+    summ += a.charCodeAt();
+  }
+  if (str === null || str === undefined) {
+    summ = 0;
+  }
+  return summ;
 }
 
 /**
@@ -388,7 +397,7 @@ function findLongestWord(sentence) {
 function reverseWords(str) {
   const a = str.split(' ');
   const b = [];
-  for (let i = 0; i < a.length; ) {
+  for (let i = 0; i < a.length; i += 1) {
     b.push(a[i].split('').reverse().join(''));
   }
   return b.join(' ');
@@ -405,8 +414,17 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const a = String(str);
+  let b = '';
+  for (let i = 0; i < a.length; i += 1) {
+    if (a[i].toLowerCase() === a[i]) {
+      b += a[i].toUpperCase();
+    } else {
+      b += a[i].toLowerCase();
+    }
+  }
+  return b;
 }
 
 /**
